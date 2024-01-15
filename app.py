@@ -6,7 +6,7 @@ app = Dash(
     __name__,
     suppress_callback_exceptions=True,
     use_pages=True,
-    update_title=None,
+    title='F1 interactive EDA',
 )
 
 controller = Controller()
