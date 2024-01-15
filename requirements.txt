@@ -1,3 +1,7 @@
-dash
+dash~=2.14.2
 dash-iconify
 dash-mantine-components
+
+plotly~=5.18.0
+
+pandas

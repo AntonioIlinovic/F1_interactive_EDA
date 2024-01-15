@@ -57,7 +57,7 @@ def create_header() -> dmc.Header:
                             dmc.Col(
                                 [
                                     dmc.MediaQuery(
-                                        create_home_link("Plotly Dash Multipage Boilerplate"),
+                                        create_home_link("F1 Interactive EDA"),
                                         smallerThan="lg",
                                         styles={"display": "none"},
                                     )
@@ -73,7 +73,7 @@ def create_header() -> dmc.Header:
                                     children=[
                                         create_header_link(
                                             "radix-icons:github-logo",
-                                            "https://github.com/helpedbyanerd",
+                                            "https://github.com/AntonioIlinovic/F1_interactive_EDA",
                                         ),
                                         dmc.ActionIcon(
                                             DashIconify(
@@ -127,6 +127,12 @@ def get_navbar_content():
                     icon="material-symbols:settings",
                     label="Settings",
                     href="/",
+                ),
+                create_main_nav_link(
+                    # icon of a map
+                    icon="bi:map",
+                    label="Circuits Map",
+                    href="/circuits-map",
                 ),
                 dmc.NavLink(
                     label="Deals",
