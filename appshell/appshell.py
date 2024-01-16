@@ -3,6 +3,7 @@ from dash_iconify import DashIconify
 
 from dash import Output, Input, clientside_callback, html, dcc, page_container, State
 
+
 def create_home_link(label: str) -> dmc.Anchor:
     return dmc.Anchor(
         label,
@@ -11,7 +12,8 @@ def create_home_link(label: str) -> dmc.Anchor:
         underline=False,
     )
 
-def create_header_link(icon: str, href: str, size: int=22, color: str="lime") -> dmc.Anchor:
+
+def create_header_link(icon: str, href: str, size: int = 22, color: str = "lime") -> dmc.Anchor:
     return dmc.Anchor(
         dmc.ThemeIcon(
             DashIconify(
@@ -27,6 +29,7 @@ def create_header_link(icon: str, href: str, size: int=22, color: str="lime") ->
         target="_blank",
     )
 
+
 def create_main_nav_link(icon, label, href):
     return dmc.Anchor(
         dmc.Group(
@@ -40,6 +43,20 @@ def create_main_nav_link(icon, label, href):
         href=href,
         variant="text",
     )
+
+
+def create_nav_link_with_sublinks(icon, label, href, sublinks):
+    return dmc.NavLink(
+        label=label,
+        icon=DashIconify(icon=icon, width=23),
+        href=href,
+        opened=True,
+        children=[
+            dmc.NavLink(label=sublink_label, href=sublink_href)
+            for sublink_label, sublink_href in sublinks
+        ],
+    )
+
 
 def create_header() -> dmc.Header:
     return dmc.Header(
@@ -108,12 +125,14 @@ def create_header() -> dmc.Header:
         ]
     )
 
+
 def get_icon(icon):
     return DashIconify(icon=icon, height=16)
 
+
 def get_navbar_content():
     return html.Div(
-            dmc.Stack(
+        dmc.Stack(
             spacing="sm",
             mt=20,
             children=[
@@ -134,11 +153,14 @@ def get_navbar_content():
                     label="Distribution Histogram",
                     href="/distribution-histogram",
                 ),
-                create_main_nav_link(
-                    # icon of a person
+                create_nav_link_with_sublinks(
                     icon="bi:person",
                     label="Driver Standings",
-                    href="/driver-standings",
+                    href=None,  # No direct href, as this is a parent link
+                    sublinks=[
+                        ("Season Progress", "/driver-standings/season-progress"),
+                        ("Season Finale", "/driver-standings/season-finale")
+                    ]
                 ),
                 create_main_nav_link(
                     # icon of a formula 1 car
@@ -150,6 +172,7 @@ def get_navbar_content():
         ),
         style={"padding-left": 16}
     )
+
 
 def create_side_navbar() -> dmc.Navbar:
     return dmc.Navbar(

@@ -1,12 +1,11 @@
-import dash
-from dash import Output, Input
+from dash import callback, Output, Input
 import plotly.graph_objects as go
 import pandas as pd
 from .data import get_data_for_map
 from .layout import circuits_map_projection
 
 
-@dash.callback(
+@callback(
     Output('circuits-map', 'figure'),
     Input('year-slider', 'value')
 )

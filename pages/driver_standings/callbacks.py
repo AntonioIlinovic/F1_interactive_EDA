@@ -1,6 +1,6 @@
 from dash import callback, Output, Input
 import plotly.express as px
-from pages.driver_standings.data import get_driver_standings_data
+from pages.driver_standings.data import get_driver_standings_for_graph_for_year, get_driver_standings_for_table_for_year
 
 
 @callback(
@@ -13,8 +13,7 @@ def update_driver_standings_graph(year):
     :param year:
     :return:
     """
-    data_for_year = get_driver_standings_data(year)
-
+    data_for_year = get_driver_standings_for_graph_for_year(year)
     fig = px.line(data_for_year,
                   x='race_of_the_season',
                   y='points',
@@ -28,3 +27,27 @@ def update_driver_standings_graph(year):
                      tickangle=45)
     fig.update_yaxes(title='Points')
     return fig
+
+
+@callback(
+    Output('driver-standings-table', 'data'),
+    [Input('driver-standings-year-slider', 'value'),
+     Input('driver-standings-table', 'sort_by')]
+)
+def update_driver_standings_table(year, sort_by):
+    """
+    Function will return a table for driver standings for a given year
+    :param sort_by: DashTable sends a list of sort_by objects. We only use single sorting, so we take the first one.
+        One example of sort_by object: [{'column_id': 'wins', 'direction': 'asc'}]
+    :param year:
+    :return:
+    """
+    data_for_year = get_driver_standings_for_table_for_year(year)
+
+    if sort_by:
+        data_for_year.sort_values(
+            by=sort_by[0]['column_id'],
+            ascending=sort_by[0]['direction'] == 'asc',
+            inplace=True)
+
+    return data_for_year.to_dict('records')

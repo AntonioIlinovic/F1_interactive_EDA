@@ -2,7 +2,7 @@ import dash
 from pages.home.layout import home_layout
 from pages.circuits_map.layout import circuits_map_layout
 from pages.distribution_histogram.layout import distribution_histogram_layout
-from pages.driver_standings.layout import driver_standings_layout
+from pages.driver_standings.layout import driver_standings_season_progress_layout, driver_standings_season_finale_layout
 from pages.constructor_standings.layout import constructor_standings_layout
 
 
@@ -34,11 +34,18 @@ class Controller:
         )
 
         dash.register_page(
-            "driver-standings",
-            path='/driver-standings',
-            title='Driver Standings',
-            name='Driver Standings',
-            layout=driver_standings_layout
+            "driver-standings/season-progress",
+            path='/driver-standings/season-progress',
+            title='Driver Standings - Season Progress',
+            name='Driver Standings - Season Progress',
+            layout=driver_standings_season_progress_layout
+        )
+        dash.register_page(
+            "driver-standings/season-finale",
+            path='/driver-standings/season-finale',
+            title='Driver Standings - Season Finale',
+            name='Driver Standings - Season Finale',
+            layout=driver_standings_season_finale_layout
         )
 
         dash.register_page(
