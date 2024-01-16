@@ -17,23 +17,6 @@ import pandas as pd
 import plotly.express as px
 
 
-# Load data only once
-# circuits_df = get_circuits_df()
-# constructor_results_df = get_constructor_results_df()
-# constructor_standings_df = get_constructor_standings_df()
-# constructors_df = get_constructors_df()
-# driver_standings_df = get_driver_standings_df()
-# drivers_df = get_drivers_df()
-# lap_times_df = get_lap_times_df()
-# pit_stops_df = get_pit_stops_df()
-# qualifying_df = get_qualifying_df()
-# races_df = get_races_df()
-# results_df = get_results_df()
-# seasons_df = get_seasons_df()
-# sprint_results_df = get_sprint_results_df()
-# status_df = get_status_df()
-
-
 def get_histogram_distribution(dataset: DatasetName, column_name: str):
     """
     This function will return a histogram distribution for a given dataset and column name.

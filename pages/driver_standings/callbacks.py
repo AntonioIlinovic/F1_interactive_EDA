@@ -1,6 +1,6 @@
 from dash import callback, Output, Input
 import plotly.express as px
-from pages.driver_standings.data import get_driver_standings_for_graph_for_year, get_driver_standings_for_table_for_year
+from pages.driver_standings.data import get_driver_standings_for_graph, get_driver_standings_for_table
 
 
 @callback(
@@ -13,7 +13,7 @@ def update_driver_standings_graph(year):
     :param year:
     :return:
     """
-    data_for_year = get_driver_standings_for_graph_for_year(year)
+    data_for_year = get_driver_standings_for_graph(year)
     fig = px.line(data_for_year,
                   x='race_of_the_season',
                   y='points',
@@ -42,7 +42,7 @@ def update_driver_standings_table(year, sort_by):
     :param year:
     :return:
     """
-    data_for_year = get_driver_standings_for_table_for_year(year)
+    data_for_year = get_driver_standings_for_table(year)
 
     if sort_by:
         data_for_year.sort_values(

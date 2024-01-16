@@ -10,7 +10,7 @@ races_df = get_races_df()
 drivers_df = get_drivers_df()
 
 
-def get_driver_standings_for_graph_for_year(year):
+def get_driver_standings_for_graph(year):
     """
     Function will return a dataframe of driver standings for a given year
     :param year:
@@ -20,7 +20,7 @@ def get_driver_standings_for_graph_for_year(year):
     return driver_standings_data_for_year
 
 
-def get_driver_standings_for_table_for_year(year):
+def get_driver_standings_for_table(year):
     """
 
     :param year:

@@ -162,12 +162,15 @@ def get_navbar_content():
                         ("Season Finale", "/driver-standings/season-finale")
                     ]
                 ),
-                create_main_nav_link(
-                    # icon of a formula 1 car
+                create_nav_link_with_sublinks(
                     icon="bi:car-front",
                     label="Constructor Standings",
-                    href="/constructor-standings",
-                )
+                    href=None,  # No direct href, as this is a parent link
+                    sublinks=[
+                        ("Season Progress", "/constructor-standings/season-progress"),
+                        ("Season Finale", "/constructor-standings/season-finale")
+                    ]
+                ),
             ],
         ),
         style={"padding-left": 16}
