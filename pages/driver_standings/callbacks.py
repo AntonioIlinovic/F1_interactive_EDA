@@ -7,21 +7,22 @@ from pages.driver_standings.data import get_driver_standings_data
     Output('driver-standings-graph', 'figure'),
     Input('driver-standings-year-slider', 'value')
 )
-def update_driver_standings_graph(selected_year):
+def update_driver_standings_graph(year):
     """
     Function will return a figure for driver standings for a given year
-    :param selected_year:
+    :param year:
     :return:
     """
-    data_for_year = get_driver_standings_data(selected_year)
+    data_for_year = get_driver_standings_data(year)
+
     fig = px.line(data_for_year,
                   x='race_of_the_season',
                   y='points',
                   color='full_name',
-                  title=f'Driver standings {selected_year}',
-                  labels={'full_name': 'Full name'},
+                  title=f'Driver Standings {year}',
+                  labels={'full_name': 'Full Name'},
                   height=700)
-    fig.update_xaxes(title='Circuit name',
+    fig.update_xaxes(title='Circuit Name',
                      tickvals=data_for_year['race_of_the_season'],
                      ticktext=data_for_year['circuit_name'],
                      tickangle=45)

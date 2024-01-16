@@ -1,4 +1,3 @@
-
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
@@ -141,6 +140,12 @@ def get_navbar_content():
                     label="Driver Standings",
                     href="/driver-standings",
                 ),
+                create_main_nav_link(
+                    # icon of a formula 1 car
+                    icon="bi:car-front",
+                    label="Constructor Standings",
+                    href="/constructor-standings",
+                )
             ],
         ),
         style={"padding-left": 16}

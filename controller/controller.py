@@ -3,6 +3,7 @@ from pages.home.layout import home_layout
 from pages.circuits_map.layout import circuits_map_layout
 from pages.distribution_histogram.layout import distribution_histogram_layout
 from pages.driver_standings.layout import driver_standings_layout
+from pages.constructor_standings.layout import constructor_standings_layout
 
 
 class Controller:
@@ -38,4 +39,12 @@ class Controller:
             title='Driver Standings',
             name='Driver Standings',
             layout=driver_standings_layout
+        )
+
+        dash.register_page(
+            "constructor-standings",
+            path='/constructor-standings',
+            title='Constructor Standings',
+            name='Constructor Standings',
+            layout=constructor_standings_layout
         )
