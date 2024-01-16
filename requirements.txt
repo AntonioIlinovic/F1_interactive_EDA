@@ -1,7 +1,8 @@
 dash~=2.14.2
 dash-iconify
 dash-mantine-components
-
-plotly~=5.18.0
-
+plotly
 pandas
+
+# Needed for Render deployment: https://github.com/thusharabandara/dash-app-render-deployment
+gunicorn
