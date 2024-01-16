@@ -134,6 +134,12 @@ def get_navbar_content():
                     label="Circuits Map",
                     href="/circuits-map",
                 ),
+                create_main_nav_link(
+                    # icon of a histogram
+                    icon="bi:bar-chart",
+                    label="Distribution Histogram",
+                    href="/distribution-histogram",
+                ),
                 dmc.NavLink(
                     label="Deals",
                     icon=get_icon(icon="tabler:fingerprint"),
