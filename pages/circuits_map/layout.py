@@ -20,5 +20,6 @@ def circuits_map_projection():
 def circuits_map_layout():
     return html.Div([
         circuits_map_year_slider(),
+        html.H2('Circuits Map', id='circuits-map-title'),
         circuits_map_projection()
     ])

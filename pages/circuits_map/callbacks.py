@@ -1,8 +1,6 @@
 from dash import callback, Output, Input
 import plotly.graph_objects as go
-import pandas as pd
 from .data import get_data_for_map
-from .layout import circuits_map_projection
 
 
 @callback(
@@ -22,10 +20,17 @@ def update_circuits_map(selected_year):
     )
 
     layout = go.Layout(
-        title=f'F1 Circuits {selected_year}',
         geo=dict(projection_type='natural earth'),
         margin=dict(l=0, r=0, t=40, b=0)
     )
 
     fig = go.Figure(data=[trace], layout=layout)
     return fig
+
+
+@callback(
+    Output('circuits-map-title', 'children'),
+    Input('year-slider', 'value')
+)
+def update_circuits_map_title(selected_year):
+    return f'Circuits Map {selected_year}'
