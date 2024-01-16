@@ -5,8 +5,8 @@ from pages.distribution_histogram.data import get_histogram_distribution, get_da
 
 
 @dash.callback(
-    Output('distribution-histogram-column-name-dropdown', 'options'),
-    Input('distribution-histogram-dataset-name-dropdown', 'value')
+    Output('distribution-histogram-column-dropdown', 'options'),
+    Input('distribution-histogram-dataset-dropdown', 'value')
 )
 def update_distribution_column_name_dropdown_options(dataset_name):
     # print(f"Selected dataset_name={dataset_name}")
@@ -22,8 +22,8 @@ def update_distribution_column_name_dropdown_options(dataset_name):
 
 @dash.callback(
     Output('distribution-histogram', 'figure'),
-    [Input('distribution-histogram-dataset-name-dropdown', 'value'),
-     Input('distribution-histogram-column-name-dropdown', 'value')]
+    [Input('distribution-histogram-dataset-dropdown', 'value'),
+     Input('distribution-histogram-column-dropdown', 'value')]
 )
 def update_distribution_histogram(dataset_name, column_name):
 
