@@ -45,8 +45,7 @@ def get_histogram_distribution(dataset: DatasetName, column_name: str):
     # TODO refactor code
 
     df = pd.read_csv(f"./F1_dataset/{dataset}.csv")
-    fig = px.histogram(df, x=column_name, marginal='box', hover_data=df.columns,
-                       title=f"Distribution of {column_name} in {dataset}")
+    fig = px.histogram(df, x=column_name, marginal='box', hover_data=df.columns)
     return fig
 
 
