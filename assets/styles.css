@@ -13,12 +13,6 @@ input:invalid {
     margin-right: 320px;
 }
 
-.circuits-map-year-slider{
-    width: 70%;
-    text:center;
-}
-
-
 @media only screen and (max-width: 1200px) {
     #navbar {
         display: none;

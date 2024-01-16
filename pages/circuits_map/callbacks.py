@@ -1,35 +1,22 @@
 import dash
-from dash import Dash, Output, Input
+from dash import Output, Input
 import plotly.graph_objects as go
 import pandas as pd
-
-
-@dash.callback(
-    Output('test-div', 'children'),
-    Input('year-slider', 'value')
-)
-def update_test_div(selected_year):
-    return f"Selected year: {selected_year}"
+from .data import get_data_for_map
+from .layout import circuits_map_projection
 
 
 @dash.callback(
     Output('circuits-map', 'figure'),
     Input('year-slider', 'value')
 )
-def update_map(selected_year):
-    races_df = pd.read_csv('./F1_dataset/races.csv')
-    circuits_df = pd.read_csv('./F1_dataset/circuits.csv')
-
-    races_circuit_df = pd.merge(races_df, circuits_df, on='circuitId')
-    years = sorted(set(races_circuit_df['year']))
-
-
-    yearly_data = races_circuit_df[races_circuit_df['year'] == selected_year]
+def update_circuits_map(selected_year):
+    data_for_map_year = get_data_for_map(selected_year)
 
     trace = go.Scattergeo(
-        text=yearly_data.apply(lambda x: f"{x['country']}{x['name_x']}", axis=1),
-        lat=yearly_data['lat'],
-        lon=yearly_data['lng'],
+        text=data_for_map_year.apply(lambda x: f"{x['country']}<br>{x['circuit_name']}", axis=1),
+        lat=data_for_map_year['lat'],
+        lon=data_for_map_year['lng'],
         mode='markers',
         marker=dict(size=5, opacity=0.8),
         name=str(selected_year)
