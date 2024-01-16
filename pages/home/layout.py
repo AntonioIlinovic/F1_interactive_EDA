@@ -5,7 +5,6 @@ def home_layout():
     return html.Div(children=[
         html.H1(children="F1 interactive EDA"),
         html.Div(children='''
-            This is the interactive EDA for F1 data.
-            Choose visualizations from the sidebar.
+            Explore interactive F1 data visualizations using the options in the sidebar.
         '''),
     ])
