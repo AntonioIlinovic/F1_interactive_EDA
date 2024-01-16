@@ -46,8 +46,6 @@ def driver_standings_table():
         sort_action='custom',
         sort_mode='single',
         sort_by=[],
-
-        style_table={'padding-top': '40px'},
     )
 
 
@@ -61,5 +59,6 @@ def driver_standings_season_progress_layout():
 def driver_standings_season_finale_layout():
     return html.Div([
         driver_standings_year_slider(),
+        html.H2('Driver Standings', id='driver-standings-table-title'),
         driver_standings_table()
     ])

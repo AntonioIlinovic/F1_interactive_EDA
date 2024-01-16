@@ -51,3 +51,16 @@ def update_driver_standings_table(year, sort_by):
             inplace=True)
 
     return data_for_year.to_dict('records')
+
+
+@callback(
+    Output('driver-standings-table-title', 'children'),
+    Input('driver-standings-year-slider', 'value')
+)
+def update_driver_standings_table_title(year):
+    """
+    Function will return a title for driver standings for a given year
+    :param year:
+    :return:
+    """
+    return f'Driver Standings {year}'
