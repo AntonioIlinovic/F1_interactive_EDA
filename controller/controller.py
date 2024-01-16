@@ -1,8 +1,8 @@
 import dash
-from pages.deals.layout import deals_layout
 from pages.home.layout import home_layout
 from pages.circuits_map.layout import circuits_map_layout
 from pages.distribution_histogram.layout import distribution_histogram_layout
+from pages.driver_standings.layout import driver_standings_layout
 
 
 class Controller:
@@ -33,9 +33,9 @@ class Controller:
         )
 
         dash.register_page(
-            "deals",
-            path='/deals',
-            title='Deals',
-            name='Deals',
-            layout=deals_layout
+            "driver-standings",
+            path='/driver-standings',
+            title='Driver Standings',
+            name='Driver Standings',
+            layout=driver_standings_layout
         )

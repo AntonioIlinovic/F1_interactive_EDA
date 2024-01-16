@@ -119,13 +119,8 @@ def get_navbar_content():
             mt=20,
             children=[
                 create_main_nav_link(
-                    icon="bi:house-door-fill",
+                    icon="bi:house",
                     label="Home",
-                    href="/",
-                ),
-                create_main_nav_link(
-                    icon="material-symbols:settings",
-                    label="Settings",
                     href="/",
                 ),
                 create_main_nav_link(
@@ -140,16 +135,11 @@ def get_navbar_content():
                     label="Distribution Histogram",
                     href="/distribution-histogram",
                 ),
-                dmc.NavLink(
-                    label="Deals",
-                    icon=get_icon(icon="tabler:fingerprint"),
-                    childrenOffset=28,
-                    opened=True,
-                    children=[
-                        dmc.NavLink(label="Today", href="/deals"),
-                        dmc.NavLink(label="Link to xy"),
-                        dmc.NavLink(label="Link to xy"),
-                    ],
+                create_main_nav_link(
+                    # icon of a person
+                    icon="bi:person",
+                    label="Driver Standings",
+                    href="/driver-standings",
                 ),
             ],
         ),

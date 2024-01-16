@@ -1,10 +1,10 @@
 from dash import html, dcc
-import plotly.graph_objects as go
 
 
-def circuits_map_year_slider():
+def driver_standings_year_slider():
+    # TODO try to reuse circuits_map_year_slider
     return dcc.Slider(
-        id='year-slider',
+        id='driver-standings-year-slider',
         min=1950,  # TODO change to min(years)
         max=2023,  # TODO change to max(years)
         value=2023,  # TODO change to max(years)
@@ -13,12 +13,12 @@ def circuits_map_year_slider():
     )
 
 
-def circuits_map_projection():
-    return dcc.Graph(id='circuits-map')
+def driver_standings_graph():
+    return dcc.Graph(id='driver-standings-graph')
 
 
-def circuits_map_layout():
+def driver_standings_layout():
     return html.Div([
-        circuits_map_year_slider(),
-        circuits_map_projection()
+        driver_standings_year_slider(),
+        driver_standings_graph()
     ])
