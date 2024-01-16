@@ -41,9 +41,23 @@ def get_histogram_distribution(dataset: DatasetName, column_name: str):
     :param column_name: of a column in the dataset
     :return:
     """
-    print(f"dataset={dataset}, column_name={column_name}")
+
+    # TODO refactor code
+
     df = pd.read_csv(f"./F1_dataset/{dataset}.csv")
-    print(df.head())
     fig = px.histogram(df, x=column_name, marginal='box', hover_data=df.columns,
                        title=f"Distribution of {column_name} in {dataset}")
     return fig
+
+
+def get_dataset_columns(dataset: DatasetName):
+    """
+    This function will return a list of columns for a given dataset.
+    :param dataset_name: dataset name. It will load necessary dataframe using this parameter
+    :return:
+    """
+
+    # TODO refactor code
+
+    df = pd.read_csv(f"./F1_dataset/{dataset}.csv")
+    return df.columns

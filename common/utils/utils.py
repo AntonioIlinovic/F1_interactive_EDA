@@ -6,7 +6,7 @@ def get_trigger() -> str:
     return ctx.triggered[0]["prop_id"]
 
 
-def DatasetName(Enum):
+class DatasetName(Enum):
     CIRCUITS = "circuits"
     CONSTRUCTOR_RESULTS = "constructor_results"
     CONSTRUCTOR_STANDINGS = "constructor_standings"

@@ -1,4 +1,5 @@
 from dash import html, dcc
+from common.utils.utils import DatasetName
 
 
 def distribution_histogram():
@@ -7,18 +8,19 @@ def distribution_histogram():
 
 def distribution_dataset_selector():
     return html.Div([
-        dcc.Dropdown(['circuits', 'constructor_results', 'constructor_standings', 'constructors'],
-                     'circuits',
-                     id='distribution-histogram-dataset-name-dropdown'),
+        dcc.Dropdown(value=DatasetName.CIRCUITS.value,  # default value
+                     id='distribution-histogram-dataset-name-dropdown',
+                     options=[{'label': dataset_name.value, 'value': dataset_name.value} for dataset_name in
+                              DatasetName]
+                     ),
         html.Div(id='distribution-histogram-dataset-name-output')
     ])
 
 
 def distribution_column_selector():
     return html.Div([
-        dcc.Dropdown(['circuit_id', 'circuit_ref', 'circuit_name', 'country', 'location', 'lat', 'lng', 'alt', 'url'],
-                     'lat',
-                     id='distribution-histogram-column-name-dropdown'),
+        dcc.Dropdown(
+            id='distribution-histogram-column-name-dropdown'),
         html.Div(id='distribution-histogram-column-name-output')
     ])
 
