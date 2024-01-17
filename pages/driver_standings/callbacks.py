@@ -13,7 +13,6 @@ def update_driver_standings_graph(year):
                   x='race_of_the_season',
                   y='points',
                   color='full_name',
-                  title=f'Driver Standings {year}',
                   labels={'full_name': 'Full Name'},
                   height=700)
     fig.update_xaxes(title='Circuit Name',
@@ -22,6 +21,14 @@ def update_driver_standings_graph(year):
                      tickangle=45)
     fig.update_yaxes(title='Points')
     return fig
+
+
+@callback(
+    Output('driver-standings-graph-title', 'children'),
+    Input('driver-standings-graph-year-slider', 'value')
+)
+def update_driver_standings_graph_title(year):
+    return f'Driver Standings {year}'
 
 
 @callback(
@@ -53,9 +60,4 @@ def update_driver_standings_table(year, sort_by):
     Input('driver-standings-table-year-slider', 'value')
 )
 def update_driver_standings_table_title(year):
-    """
-    Function will return a title for driver standings for a given year
-    :param year:
-    :return:
-    """
     return f'Driver Standings {year}'

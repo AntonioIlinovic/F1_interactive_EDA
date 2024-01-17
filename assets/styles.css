@@ -24,6 +24,7 @@ input:invalid {
     }
 }
 
-.year-slider {
-    justify-content: center;
+/* Driver and Constructor standings tables */
+.table-container {
+    margin-top: 2em;
 }

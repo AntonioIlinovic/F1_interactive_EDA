@@ -31,6 +31,7 @@ def distribution_column_selector():
 
 def distribution_histogram_layout():
     return html.Div([
+        html.H2('Distribution Histogram', id='distribution-histogram-title'),
         distribution_dataset_selector(),
         distribution_column_selector(),
         distribution_histogram()

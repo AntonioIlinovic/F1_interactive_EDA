@@ -27,6 +27,14 @@ def update_constructor_standings_graph(year):
 
 
 @callback(
+    Output('constructor-standings-graph-title', 'children'),
+    Input('constructor-standings-graph-year-slider', 'value')
+)
+def update_constructor_standings_graph_title(year):
+    return f'Constructor Standings {year}'
+
+
+@callback(
     Output('constructor-standings-table', 'data'),
     [Input('constructor-standings-table-year-slider', 'value'),
      Input('constructor-standings-table', 'sort_by')]

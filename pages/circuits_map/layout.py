@@ -26,7 +26,7 @@ def circuits_map_figure_data_trace_template():
 
 def circuits_map_layout():
     return html.Div([
-        create_year_slider(html_id='circuits-map-year-slider'),
         html.H2('Circuits Map', id='circuits-map-title'),
+        create_year_slider(html_id='circuits-map-year-slider'),
         circuits_map_projection()
     ])
