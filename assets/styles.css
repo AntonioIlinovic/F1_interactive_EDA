@@ -23,3 +23,7 @@ input:invalid {
         margin-right: 0;
     }
 }
+
+.year-slider {
+    justify-content: center;
+}

@@ -5,7 +5,7 @@ from .data import get_data_for_map
 
 @callback(
     Output('circuits-map', 'figure'),
-    Input('year-slider', 'value')
+    Input('circuits-map-year-slider', 'value')
 )
 def update_circuits_map(selected_year):
     data_for_map_year = get_data_for_map(selected_year)
@@ -30,7 +30,7 @@ def update_circuits_map(selected_year):
 
 @callback(
     Output('circuits-map-title', 'children'),
-    Input('year-slider', 'value')
+    Input('circuits-map-year-slider', 'value')
 )
 def update_circuits_map_title(selected_year):
     return f'Circuits Map {selected_year}'

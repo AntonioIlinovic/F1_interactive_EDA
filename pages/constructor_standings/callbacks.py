@@ -5,7 +5,7 @@ from pages.constructor_standings.data import get_constructor_standings_data_for_
 
 @callback(
     Output('constructor-standings-graph', 'figure'),
-    Input('constructor-standings-year-slider', 'value')
+    Input('constructor-standings-graph-year-slider', 'value')
 )
 def update_constructor_standings_graph(year):
     """
@@ -33,7 +33,7 @@ def update_constructor_standings_graph(year):
 
 @callback(
     Output('constructor-standings-table', 'data'),
-    [Input('constructor-standings-year-slider', 'value'),
+    [Input('constructor-standings-table-year-slider', 'value'),
      Input('constructor-standings-table', 'sort_by')]
 )
 def update_constructor_standings_table(year, sort_by):
@@ -57,7 +57,7 @@ def update_constructor_standings_table(year, sort_by):
 
 @callback(
     Output('constructor-standings-table-title', 'children'),
-    Input('constructor-standings-year-slider', 'value')
+    Input('year-slider', 'value')
 )
 def update_constructor_standings_table_title(year):
     """

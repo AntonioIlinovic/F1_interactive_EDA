@@ -5,7 +5,7 @@ from pages.driver_standings.data import get_driver_standings_for_graph, get_driv
 
 @callback(
     Output('driver-standings-graph', 'figure'),
-    Input('driver-standings-year-slider', 'value')
+    Input('year-slider', 'value')
 )
 def update_driver_standings_graph(year):
     """
@@ -31,7 +31,7 @@ def update_driver_standings_graph(year):
 
 @callback(
     Output('driver-standings-table', 'data'),
-    [Input('driver-standings-year-slider', 'value'),
+    [Input('year-slider', 'value'),
      Input('driver-standings-table', 'sort_by')]
 )
 def update_driver_standings_table(year, sort_by):
@@ -55,7 +55,7 @@ def update_driver_standings_table(year, sort_by):
 
 @callback(
     Output('driver-standings-table-title', 'children'),
-    Input('driver-standings-year-slider', 'value')
+    Input('year-slider', 'value')
 )
 def update_driver_standings_table_title(year):
     """

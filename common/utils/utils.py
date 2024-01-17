@@ -1,3 +1,4 @@
+import pandas as pd
 from dash import ctx
 from enum import Enum
 
@@ -21,3 +22,24 @@ class DatasetName(Enum):
     SEASONS = "seasons"
     SPRINT_RESULTS = "sprint_results"
     STATUS = "status"
+
+
+def load_dataset(dataset_name: DatasetName):
+    """
+    This function will load a dataset by dataset name. Sometimes user can dynamically select a dataset name, and
+    it will be necessary to load a dataset dynamically.
+    :param dataset_name: dataset name. It will load necessary dataframe using this parameter
+    :return:
+    """
+    df = pd.read_csv(f"./F1_dataset/{dataset_name.value}.csv")
+    return df
+
+
+def get_dataset_columns(dataset_name: DatasetName):
+    """
+    This function will return a list of columns for a given dataset.
+    :param dataset_name: dataset name. It will load necessary dataframe using this parameter
+    :return:
+    """
+    df = load_dataset(dataset_name)
+    return df.columns
