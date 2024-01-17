@@ -1,12 +1,12 @@
 import pandas as pd
-from common.models.races import get_races_df
-from common.models.circuits import get_circuits_df
+from common.utils.utils import load_dataset, DatasetName
 from .preprocessing import preprocess_map_data_for_year
 
 
+print('Loading circuits map data...')
 # Load necessary dataframes once
-races_df = get_races_df()
-circuits_df = get_circuits_df()
+races_df = load_dataset(DatasetName.RACES)
+circuits_df = load_dataset(DatasetName.CIRCUITS)
 races_circuit_df = pd.merge(races_df, circuits_df, on='circuitId')
 
 

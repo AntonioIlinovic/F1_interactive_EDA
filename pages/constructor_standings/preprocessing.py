@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def get_constructor_standings_data_for_graph_for_year(year, constructors_df, constructor_standings_df, races_df):
+def preprocess_constructor_standings_data_for_graph_for_year(year, constructors_df, constructor_standings_df, races_df):
     """
 
     :param year:
@@ -21,7 +21,7 @@ def get_constructor_standings_data_for_graph_for_year(year, constructors_df, con
     return constructor_standings_year_df
 
 
-def get_constructor_standings_data_for_table_for_year(year, constructors_df, constructor_standings_df, races_df):
+def preprocess_constructor_standings_data_for_table_for_year(year, constructors_df, constructor_standings_df, races_df):
     """
 
     :param year:

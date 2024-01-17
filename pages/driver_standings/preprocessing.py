@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def get_driver_standings_data_for_graph_for_year(year, drivers_df, driver_standings_df, races_df):
+def preprocess_driver_standings_data_for_graph_for_year(year, drivers_df, driver_standings_df, races_df):
     """
 
     :param year:
@@ -24,7 +24,7 @@ def get_driver_standings_data_for_graph_for_year(year, drivers_df, driver_standi
     return driver_standings_year_df
 
 
-def get_driver_standings_data_for_table_for_year(year, driver_standings_df, races_df, drivers_df):
+def preprocess_driver_standings_data_for_table_for_year(year, driver_standings_df, races_df, drivers_df):
     """
 
     :param year:
