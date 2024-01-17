@@ -10,19 +10,8 @@ races_df = load_dataset(DatasetName.RACES)
 
 
 def get_constructor_standings_data_for_graph(year):
-    """
-
-    :return:
-    """
-    constructor_standings_data_for_year = preprocess_constructor_standings_data_for_graph_for_year(year, constructors_df, constructor_standings_df, races_df)
-    return constructor_standings_data_for_year
+    return preprocess_constructor_standings_data_for_graph_for_year(year, constructors_df, constructor_standings_df, races_df)
 
 
-def get_constructor_standings_for_table(year):
-    """
-
-    :param year:
-    :return:
-    """
-    constructor_standings_for_year = preprocess_constructor_standings_data_for_table_for_year(year, constructors_df, constructor_standings_df, races_df)
-    return constructor_standings_for_year
+def get_constructor_standings_data_for_table(year):
+    return preprocess_constructor_standings_data_for_table_for_year(year, constructors_df, constructor_standings_df, races_df)

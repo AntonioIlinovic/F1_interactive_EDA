@@ -2,14 +2,6 @@ import pandas as pd
 
 
 def preprocess_driver_standings_data_for_graph_for_year(year, drivers_df, driver_standings_df, races_df):
-    """
-
-    :param year:
-    :param drivers_df:
-    :param driver_standings_df:
-    :param races_df:
-    :return:
-    """
     driver_standings_year_df = pd.merge(driver_standings_df, races_df, on='raceId')
     driver_standings_year_df = driver_standings_year_df[driver_standings_year_df['year'] == year]
     driver_standings_year_df = pd.merge(driver_standings_year_df, drivers_df, on='driverId')
@@ -25,14 +17,6 @@ def preprocess_driver_standings_data_for_graph_for_year(year, drivers_df, driver
 
 
 def preprocess_driver_standings_data_for_table_for_year(year, driver_standings_df, races_df, drivers_df):
-    """
-
-    :param year:
-    :param driver_standings_df:
-    :param races_df:
-    :param drivers_df:
-    :return:
-    """
     championship_table_df = driver_standings_df[['raceId', 'driverId', 'points', 'position', 'wins']]
     championship_table_df = pd.merge(championship_table_df, races_df[['raceId', 'year', 'name', 'round']], on='raceId')
     championship_table_df = pd.merge(championship_table_df, drivers_df[['driverId', 'code', 'forename', 'surname']],

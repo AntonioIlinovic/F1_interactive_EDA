@@ -24,14 +24,16 @@ class DatasetName(Enum):
     STATUS = "status"
 
 
-def load_dataset(dataset_name: DatasetName):
+def load_dataset(dataset_name: [DatasetName, str]):
     """
-    This function will load a dataset by dataset name. Sometimes user can dynamically select a dataset name, and
-    it will be necessary to load a dataset dynamically.
-    :param dataset_name: dataset name. It will load necessary dataframe using this parameter
+    This function will load a dataset from F1_dataset folder. Both DatasetName and str are accepted as input because
+    when using Dash callback, the value of a dropdown is a str.
+    :param dataset_name:
     :return:
     """
-    df = pd.read_csv(f"./F1_dataset/{dataset_name.value}.csv")
+    if isinstance(dataset_name, DatasetName):
+        dataset_name = dataset_name.value
+    df = pd.read_csv(f"./F1_dataset/{dataset_name}.csv")
     return df
 
 

@@ -1,6 +1,6 @@
 from dash import callback, Output, Input
 import plotly.express as px
-from pages.constructor_standings.data import get_constructor_standings_data_for_graph, get_constructor_standings_for_table
+from pages.constructor_standings.data import get_constructor_standings_data_for_graph, get_constructor_standings_data_for_table
 
 
 @callback(
@@ -8,11 +8,6 @@ from pages.constructor_standings.data import get_constructor_standings_data_for_
     Input('constructor-standings-graph-year-slider', 'value')
 )
 def update_constructor_standings_graph(year):
-    """
-    Function will return a figure for constructor standings for a given year
-    :param year:
-    :return:
-    """
     data_for_year = get_constructor_standings_data_for_graph(year)
 
     fig = px.line(data_for_year,
@@ -44,7 +39,7 @@ def update_constructor_standings_table(year, sort_by):
     :param year:
     :return:
     """
-    data_for_year = get_constructor_standings_for_table(year)
+    data_for_year = get_constructor_standings_data_for_table(year)
 
     if sort_by:
         data_for_year.sort_values(
@@ -57,12 +52,7 @@ def update_constructor_standings_table(year, sort_by):
 
 @callback(
     Output('constructor-standings-table-title', 'children'),
-    Input('year-slider', 'value')
+    Input('constructor-standings-table-year-slider', 'value')
 )
 def update_constructor_standings_table_title(year):
-    """
-    Function will return a table title for constructor standings for a given year
-    :param year:
-    :return:
-    """
     return f'Constructor Standings {year}'

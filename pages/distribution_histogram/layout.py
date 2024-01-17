@@ -1,6 +1,5 @@
 from dash import html, dcc
 from common.utils.utils import DatasetName
-from dash_mantine_components import Group
 
 
 def distribution_histogram():

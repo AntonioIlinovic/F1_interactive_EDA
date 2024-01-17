@@ -43,14 +43,14 @@ def constructor_standings_table():
 
 def constructor_standings_season_progress_layout():
     return html.Div([
-        create_year_slider(html_id='constructor-standings-season-progress-year-slider'),
+        create_year_slider(html_id='constructor-standings-graph-year-slider'),
         constructor_standings_graph()
     ])
 
 
 def constructor_standings_season_finale_layout():
     return html.Div([
-        create_year_slider(html_id='constructor-standings-season-finale-year-slider'),
+        create_year_slider(html_id='constructor-standings-table-year-slider'),
         html.H2('Constructor Standings', id='constructor-standings-table-title'),
         constructor_standings_table()
     ])

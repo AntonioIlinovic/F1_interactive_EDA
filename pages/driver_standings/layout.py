@@ -1,5 +1,5 @@
 from dash import html, dcc, dash_table
-
+import plotly.graph_objects as go
 from common.components.sliders import create_year_slider
 
 
@@ -43,14 +43,14 @@ def driver_standings_table():
 
 def driver_standings_season_progress_layout():
     return html.Div([
-        create_year_slider(),
+        create_year_slider(html_id='driver-standings-graph-year-slider'),
         driver_standings_graph()
     ])
 
 
 def driver_standings_season_finale_layout():
     return html.Div([
-        create_year_slider(),
+        create_year_slider(html_id='driver-standings-table-year-slider'),
         html.H2('Driver Standings', id='driver-standings-table-title'),
         driver_standings_table()
     ])

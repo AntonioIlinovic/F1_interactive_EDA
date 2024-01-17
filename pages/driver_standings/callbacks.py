@@ -5,14 +5,9 @@ from pages.driver_standings.data import get_driver_standings_for_graph, get_driv
 
 @callback(
     Output('driver-standings-graph', 'figure'),
-    Input('year-slider', 'value')
+    Input('driver-standings-graph-year-slider', 'value')
 )
 def update_driver_standings_graph(year):
-    """
-    Function will return a figure for driver standings for a given year
-    :param year:
-    :return:
-    """
     data_for_year = get_driver_standings_for_graph(year)
     fig = px.line(data_for_year,
                   x='race_of_the_season',
@@ -31,7 +26,7 @@ def update_driver_standings_graph(year):
 
 @callback(
     Output('driver-standings-table', 'data'),
-    [Input('year-slider', 'value'),
+    [Input('driver-standings-table-year-slider', 'value'),
      Input('driver-standings-table', 'sort_by')]
 )
 def update_driver_standings_table(year, sort_by):
@@ -55,7 +50,7 @@ def update_driver_standings_table(year, sort_by):
 
 @callback(
     Output('driver-standings-table-title', 'children'),
-    Input('year-slider', 'value')
+    Input('driver-standings-table-year-slider', 'value')
 )
 def update_driver_standings_table_title(year):
     """
