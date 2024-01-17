@@ -22,5 +22,5 @@ def update_distribution_column_name_dropdown_options(dataset_name):
 )
 def update_distribution_histogram(dataset_name, column_name):
     distribution_data, hover_data = get_data_for_histogram_distribution(dataset_name)
-    fig = px.histogram(distribution_data, x=column_name, marginal='box', hover_data=hover_data)
+    fig = px.histogram(distribution_data, x=column_name, marginal='box', hover_data=hover_data, height=600)
     return fig

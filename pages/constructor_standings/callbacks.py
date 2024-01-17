@@ -14,7 +14,6 @@ def update_constructor_standings_graph(year):
                   x='round',
                   y='points',
                   color='constructor_name',
-                  title=f'Constructor Standings {year}',
                   labels={'constructor_name': 'Constructor Name'},
                   height=700)
     # Update x-axis to use circuit names as ticks

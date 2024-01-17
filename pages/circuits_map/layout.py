@@ -13,7 +13,8 @@ def circuits_map_projection():
 def circuits_map_figure_layout_template():
     return go.Layout(
         geo=dict(projection_type='natural earth'),
-        margin=dict(l=0, r=0, t=40, b=0)
+        margin=dict(l=0, r=0, t=40, b=0),
+        height=600,
     )
 
 

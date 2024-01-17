@@ -4,7 +4,7 @@ from common.utils.utils import DatasetName
 
 def distribution_histogram():
     return dcc.Graph(
-        id='distribution-histogram'
+        id='distribution-histogram',
     )
 
 
