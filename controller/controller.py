@@ -4,6 +4,7 @@ from pages.circuits_map.layout import circuits_map_layout
 from pages.distribution_histogram.layout import distribution_histogram_layout
 from pages.driver_standings.layout import driver_standings_season_progress_layout, driver_standings_season_finale_layout
 from pages.constructor_standings.layout import constructor_standings_season_progress_layout, constructor_standings_season_finale_layout
+from pages.lap_times.layout import lap_times_layout
 
 
 class Controller:
@@ -61,4 +62,12 @@ class Controller:
             title='Constructor Standings - Season Finale',
             name='Constructor Standings - Season Finale',
             layout=constructor_standings_season_finale_layout
+        )
+
+        dash.register_page(
+            "lap-times",
+            path='/lap-times',
+            title='Lap Times',
+            name='Lap Times',
+            layout=lap_times_layout
         )

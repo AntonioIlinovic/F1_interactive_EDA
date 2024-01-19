@@ -45,6 +45,12 @@ def get_navbar_content():
                         ("Season Finale", "/constructor-standings/season-finale")
                     ]
                 ),
+                create_main_nav_link(
+                    # Lap Times
+                    icon="bi:graph-up",
+                    label="Lap Times",
+                    href="/lap-times",
+                )
             ],
         ),
         style={"padding-left": 16}

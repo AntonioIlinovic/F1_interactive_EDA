@@ -4,5 +4,8 @@ dash-mantine-components
 plotly
 pandas
 
+# Needed for interactive development
+jupyter
+
 # Needed for Render deployment: https://github.com/thusharabandara/dash-app-render-deployment
 gunicorn

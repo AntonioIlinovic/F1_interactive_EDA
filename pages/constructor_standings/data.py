@@ -2,7 +2,7 @@ from common.utils.utils import load_dataset, DatasetName
 from .preprocessing import preprocess_constructor_standings_data_for_graph_for_year, preprocess_constructor_standings_data_for_table_for_year
 
 
-print('Loading constructor standings data...')
+print('Loading data for Constructor Standings page...')
 # Load necessary data once
 constructors_df = load_dataset(DatasetName.CONSTRUCTORS)
 constructor_standings_df = load_dataset(DatasetName.CONSTRUCTOR_STANDINGS)

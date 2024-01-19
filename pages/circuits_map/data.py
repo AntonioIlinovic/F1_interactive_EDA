@@ -3,7 +3,7 @@ from common.utils.utils import load_dataset, DatasetName
 from .preprocessing import preprocess_map_data_for_year
 
 
-print('Loading circuits map data...')
+print('Loading data for Circuits Map page...')
 # Load necessary dataframes once
 races_df = load_dataset(DatasetName.RACES)
 circuits_df = load_dataset(DatasetName.CIRCUITS)
