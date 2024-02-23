@@ -10,6 +10,12 @@ The application is available online and can be accessed via this link: [F1 Inter
 Please note that the application is hosted on a free version of Render, which may result in longer loading times initially.
 
 
+### Example Video
+
+For a quick overview and demonstration of the F1 Interactive EDA, you can watch the [example video](./F1_Interactive_EDA_video.mp4). The video showcases the functionalities and features of the application, providing a glimpse into its capabilities.
+
+
+
 ## Purpose of the Application
 
 The F1 Interactive EDA is not just about presenting predefined analyses; it's a platform for discovery and exploration. Users are encouraged to delve into the dataset through various visualizations, uncovering insights and patterns on their own. As such, the visualizations are designed to be as general as possible. This approach allows for the exploration of data across different seasons and contexts, acknowledging that some data may not be available for certain seasons or may not display as expected. This aspect is an intentional part of the exploratory journey.
