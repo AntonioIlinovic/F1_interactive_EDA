@@ -10,10 +10,16 @@ The application is available online and can be accessed via this link: [F1 Inter
 Please note that the application is hosted on a free version of Render, which may result in longer loading times initially.
 
 
-### Example Video
+### Example Video and Screenshots
 
-For a quick overview and demonstration of the F1 Interactive EDA, you can watch the [example video](./F1_Interactive_EDA_video.mp4). The video showcases the functionalities and features of the application, providing a glimpse into its capabilities.
+For a quick overview and demonstration of the F1 Interactive EDA, you can watch the [example video](./F1_Interactive_EDA_video.mp4). The video showcases the functionalities and features of the application, providing a glimpse into its capabilities. Here are also some example screenshots:
 
+<img width="1914" height="952" alt="image" src="https://github.com/user-attachments/assets/718fec98-96eb-4a69-93f4-0378fdd9bcd4" />
+<img width="1914" height="952" alt="image" src="https://github.com/user-attachments/assets/91cddfc3-fa75-4307-bbb2-f6118348b621" />
+<img width="1914" height="952" alt="image" src="https://github.com/user-attachments/assets/fa8e01ed-07d8-497a-8c84-db4557f851a6" />
+<img width="1914" height="952" alt="image" src="https://github.com/user-attachments/assets/d6721621-cc99-42d3-90dc-397dddd74589" />
+<img width="1914" height="952" alt="image" src="https://github.com/user-attachments/assets/99fa012d-e878-45bc-861d-abdb9a221760" />
+<img width="1914" height="952" alt="image" src="https://github.com/user-attachments/assets/441743ff-c7b8-4842-99ed-a4ff8e7f704e" />
 
 
 ## Purpose of the Application
